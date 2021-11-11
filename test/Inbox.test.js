@@ -25,7 +25,7 @@ describe('Inbox', () => {
   });
   it('has a default message', async () => {
     const message = await inbox.methods.message().call();
-    assert.equal(message, 'Hi there!');
+    assert.strictEqual(message, 'Hi there!');
   });
   it('can change the message', async () => {
     await inbox.methods.setMessage('bye').send({ from: accounts[0] });
